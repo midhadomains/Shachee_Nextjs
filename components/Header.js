@@ -23,10 +23,9 @@ export default function Header() {
             <li><Link href="/#research" className="hover:text-brand-700">Research</Link></li>
             <li>
               <a
-                href={site.resumeUrl}
+                href="/api/resume"
                 target="_blank"
                 rel="noreferrer"
-                download
                 className="hover:text-brand-700"
               >
                 Resume
