@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f8fafc;
+}
+
+a {
+  transition: color 150ms ease, background-color 150ms ease, transform 150ms ease;
+}
+
+.prose p {
+  line-height: 1.7;
+}
