@@ -21,6 +21,17 @@ export default function Header() {
             <li><Link href="/" className="hover:text-brand-700">Home</Link></li>
             <li><Link href="/about" className="hover:text-brand-700">About</Link></li>
             <li><Link href="/#research" className="hover:text-brand-700">Research</Link></li>
+            <li>
+              <a
+                href={site.resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                download
+                className="hover:text-brand-700"
+              >
+                Resume
+              </a>
+            </li>
             <li><Link href="/#contact" className="hover:text-brand-700">Contact</Link></li>
           </ul>
         </nav>
