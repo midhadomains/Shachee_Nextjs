@@ -15,7 +15,8 @@ export default function Home() {
             Prime Minister’s Research Fellow
           </span>
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight">{site.title}</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight">{site.author}</h1>
+            <p className="text-sm font-semibold text-brand-700 uppercase tracking-wide">Research Scholar</p>
             <p className="text-brand-800 font-semibold">
               Ph.D. Research Scholar, Department of Microbiology &amp; Cell Biology, IISc Bengaluru.
             </p>
