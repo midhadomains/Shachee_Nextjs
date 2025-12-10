@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Layout from "../components/Layout";
 import { siteData } from "../data/siteData";
 
@@ -25,12 +26,15 @@ export default function About() {
             </div>
           ) : null}
           <div className="flex flex-wrap gap-3 pt-2">
-            <a href={site.resumeUrl} target="_blank" rel="noreferrer" className="px-4 py-2 bg-brand-700 text-white rounded-lg text-sm font-semibold hover:bg-brand-800 transition">
+            <a href={site.resumeUrl} className="px-4 py-2 bg-brand-700 text-white rounded-lg text-sm font-semibold hover:bg-brand-800 transition">
               View Resume Snapshot
             </a>
-            <a href="#contact" className="px-4 py-2 border border-brand-200 text-brand-800 rounded-lg text-sm font-semibold hover:bg-brand-50 transition">
+            <Link
+              href="/#contact"
+              className="px-4 py-2 border border-brand-200 text-brand-800 rounded-lg text-sm font-semibold hover:bg-brand-50 transition"
+            >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
 

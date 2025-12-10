@@ -24,7 +24,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-3">
             <a href="#contact" className="px-5 py-3 bg-brand-700 text-white rounded-lg shadow hover:bg-brand-800 transition">Get in touch</a>
-            <a href={site.resumeUrl} target="_blank" rel="noreferrer" className="px-5 py-3 border border-brand-200 text-brand-800 rounded-lg hover:bg-brand-50 transition">Download Resume</a>
+            <a href={site.resumeUrl} className="px-5 py-3 border border-brand-200 text-brand-800 rounded-lg hover:bg-brand-50 transition">Download Resume</a>
           </div>
           <div className="space-y-2">
             <h2 className="text-lg font-semibold text-slate-900">Core Focus</h2>

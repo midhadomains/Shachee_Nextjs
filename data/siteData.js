@@ -6,7 +6,7 @@ export const siteData = {
     email: "shachees@iisc.ac.in",
     location: "Bengaluru, India",
     avatar: "/profile.png",
-    resumeUrl: "https://shachee.in/wp-content/uploads/2024/04/Resume-Shachee.pdf"
+    resumeUrl: "/api/resume"
   },
   researchInterest: "Exploring viral and bacterial infectious diseases, decoding molecular mechanisms of disease establishment, and mapping host innate/adaptive immune responses alongside vaccine development and efficacy testing. Focused on emerging viral diseases, viral biology, and antiviral innate immunity under the supervision of Dr. Shashank Tripathi. Aiming to characterize signaling pathways and mediators of interferon-independent antiviral responses in mammalian cells, to reveal new antiviral factors tested against coronaviruses, influenza, flaviviruses (Dengue, Zika), retroviruses (HIV), and DNA viruses (Herpes). Long-term goal: translate discoveries into novel drugs and vaccination strategies for human health.",
   supervisor: {

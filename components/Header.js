@@ -10,7 +10,7 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/#research", label: "Research" },
-    { href: "/api/resume", label: "Resume", external: true },
+    { href: site.resumeUrl || "/api/resume", label: "Resume" },
     { href: "/#contact", label: "Contact" }
   ];
 
