@@ -10,7 +10,7 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/#research", label: "Research" },
-    { href: site.resumeUrl || "/api/resume", label: "Resume" },
+    { href: site.resumeUrl || "/Resume-Shachee.pdf", label: "Resume", download: true, external: true },
     { href: "/#contact", label: "Contact" }
   ];
 
@@ -28,24 +28,29 @@ export default function Header() {
         </Link>
         <nav aria-label="Primary" className="hidden md:block">
           <ul className="flex items-center gap-4 text-sm font-medium text-slate-700">
-            {navLinks.map(link => (
-              <li key={link.href}>
-                {link.external ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-brand-700"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link href={link.href} className="hover:text-brand-700">
-                    {link.label}
-                  </Link>
-                )}
-              </li>
-            ))}
+            {navLinks.map(link => {
+              const isResume = link.label === "Resume";
+              const downloadAttr = isResume && link.download ? "download" : undefined;
+              return (
+                <li key={link.href}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target={isResume ? "_self" : "_blank"}
+                      rel="noreferrer"
+                      className="hover:text-brand-700"
+                      {...(downloadAttr ? { download: "" } : {})}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} className="hover:text-brand-700">
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
         <div className="hidden sm:flex items-center gap-3">
@@ -133,10 +138,11 @@ export default function Header() {
                       {link.external ? (
                         <a
                           href={link.href}
-                          target="_blank"
+                          target={isResume ? "_self" : "_blank"}
                           rel="noreferrer"
                           className={itemClass}
                           onClick={() => setMenuOpen(false)}
+                          {...(isResume && link.download ? { download: "" } : {})}
                         >
                           {link.label}
                         </a>

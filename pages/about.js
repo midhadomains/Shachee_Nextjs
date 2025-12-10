@@ -26,7 +26,7 @@ export default function About() {
             </div>
           ) : null}
           <div className="flex flex-wrap gap-3 pt-2">
-            <a href={site.resumeUrl} className="px-4 py-2 bg-brand-700 text-white rounded-lg text-sm font-semibold hover:bg-brand-800 transition">
+            <a href={site.resumeUrl} download className="px-4 py-2 bg-brand-700 text-white rounded-lg text-sm font-semibold hover:bg-brand-800 transition">
               View Resume Snapshot
             </a>
             <Link
