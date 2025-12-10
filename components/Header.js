@@ -5,12 +5,31 @@ import { siteData } from "../data/siteData";
 export default function Header() {
   const { site, social } = siteData;
   const [menuOpen, setMenuOpen] = useState(false);
+  const resumeHref = site.resumeUrl || "/Resume-Shachee.pdf";
+
+  const triggerResumeDownload = () => {
+    if (typeof window === "undefined") return;
+    const link = document.createElement("a");
+    link.href = resumeHref;
+    link.download = "Resume-Shachee.pdf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
+  const handleResumeClick = event => {
+    event.preventDefault();
+    if (typeof window !== "undefined") {
+      window.open(resumeHref, "_blank", "noopener,noreferrer");
+      triggerResumeDownload();
+    }
+  };
 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/#research", label: "Research" },
-    { href: site.resumeUrl || "/Resume-Shachee.pdf", label: "Resume", download: true, external: true },
+    { href: resumeHref, label: "Resume", download: true, external: true },
     { href: "/#contact", label: "Contact" }
   ];
 
@@ -36,10 +55,11 @@ export default function Header() {
                   {link.external ? (
                     <a
                       href={link.href}
-                      target="_blank"
+                      target={isResume ? "_blank" : "_blank"}
                       rel="noreferrer"
                       className="hover:text-brand-700"
                       {...(downloadAttr ? { download: downloadAttr } : {})}
+                      {...(isResume ? { onClick: handleResumeClick } : {})}
                     >
                       {link.label}
                     </a>
@@ -138,10 +158,15 @@ export default function Header() {
                       {link.external ? (
                         <a
                           href={link.href}
-                          target="_blank"
+                          target={isResume ? "_blank" : "_blank"}
                           rel="noreferrer"
                           className={itemClass}
-                          onClick={() => setMenuOpen(false)}
+                          onClick={e => {
+                            if (isResume) {
+                              handleResumeClick(e);
+                            }
+                            setMenuOpen(false);
+                          }}
                           {...(isResume && link.download ? { download: "" } : {})}
                         >
                           {link.label}
