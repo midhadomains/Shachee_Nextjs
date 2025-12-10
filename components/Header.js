@@ -30,16 +30,16 @@ export default function Header() {
           <ul className="flex items-center gap-4 text-sm font-medium text-slate-700">
             {navLinks.map(link => {
               const isResume = link.label === "Resume";
-              const downloadAttr = isResume && link.download ? "download" : undefined;
+              const downloadAttr = isResume && link.download ? "" : undefined;
               return (
                 <li key={link.href}>
                   {link.external ? (
                     <a
                       href={link.href}
-                      target={isResume ? "_self" : "_blank"}
+                      target="_blank"
                       rel="noreferrer"
                       className="hover:text-brand-700"
-                      {...(downloadAttr ? { download: "" } : {})}
+                      {...(downloadAttr ? { download: downloadAttr } : {})}
                     >
                       {link.label}
                     </a>
@@ -138,7 +138,7 @@ export default function Header() {
                       {link.external ? (
                         <a
                           href={link.href}
-                          target={isResume ? "_self" : "_blank"}
+                          target="_blank"
                           rel="noreferrer"
                           className={itemClass}
                           onClick={() => setMenuOpen(false)}
