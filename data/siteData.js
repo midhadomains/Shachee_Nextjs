@@ -1,8 +1,8 @@
 export const siteData = {
   site: {
-    title: "Dr. Shachee Swaraj — Research Scholar",
+    title: "Shachee Swaraj | Research Scholar",
     description: "Prime Minister's Research Fellow exploring broad-spectrum, interferon-independent antiviral innate immunity.",
-    author: "Dr. Shachee Swaraj",
+    author: "Shachee Swaraj",
     email: "shachees@iisc.ac.in",
     location: "Bengaluru, India",
     avatar: "/profile.png",
